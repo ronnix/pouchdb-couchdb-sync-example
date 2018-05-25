@@ -1,0 +1,9 @@
+version: "3"
+services:
+  db:
+    build:
+      context: ./db/
+    volumes:
+      - ./db/data:/opt/couchdb/data
+    ports:
+      - "5984:5984"
