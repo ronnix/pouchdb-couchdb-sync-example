@@ -411,11 +411,19 @@ label[for='toggle-all'] {
     display:none;
 }
 
-#sync-error, #sync-success {
+#sync-active, #sync-paused, #sync-reconnecting, #sync-error {
   display: none;
 }
 
-[data-sync-state=syncing] #sync-success {
+[data-sync-state=active] #sync-active {
+  display: block;
+}
+
+[data-sync-state=paused] #sync-paused {
+  display: block;
+}
+
+[data-sync-state=reconnecting] #sync-reconnecting {
   display: block;
 }
 
