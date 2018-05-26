@@ -62,7 +62,10 @@
   // Initialise a sync with the remote server
   function sync() {
     syncDom.setAttribute('data-sync-state', 'syncing');
-    var opts = {live: true};
+    var opts = {
+      live: true,   // real-time replication
+      retry: true,  // reconnect automatically
+    };
     db.replicate.to(remoteCouch, opts, syncError);
     db.replicate.from(remoteCouch, opts, syncError);
   }
