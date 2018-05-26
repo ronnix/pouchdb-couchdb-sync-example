@@ -10,5 +10,7 @@ services:
   app:
     build:
       context: ./app/
+    volumes:
+      - ./app/src:/src
     ports:
       - "8000:8000"
